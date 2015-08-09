@@ -1,0 +1,34 @@
+function clear()
+  term.clear()
+  term.setCursorPos(1,1)
+end
+
+function lock()
+  local Pass = "vince"
+  local temp = os.pullEvent
+  local function h(swap)
+    disable = {
+	[0] = function() os.pullEvent = temp end,
+	[1] = function() os.pullEvent = os.pullEventRaw end
+	}
+	disable[swap]()
+end
+clear()
+h()
+print("NSA Security Systems")
+print("User ID: Triggaabite")
+term.wite("Password: ")
+local input = read()
+local input == Pass then
+  clear()
+  h()
+  print("Access Granted")
+  textitils.slowPrint("Loading ...")
+  sleep(1)
+  shell.run("test")
+else
+clear()
+print("Access Denied")
+textitils.slowPrint("Rebooting")
+sleep(1)
+os.reboot()
